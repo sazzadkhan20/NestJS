@@ -7,6 +7,10 @@ import { HelloService } from './hello.service';
   imports: [], // import other modules if needed
   controllers: [HelloController],
   providers: [HelloService],
-  exports: [] // export service to the other modules if needed 
+  exports: [HelloService] // export service to the other modules if needed 
 })
 export class HelloModule {}
+function ConfigModule(arg0: {}): import("@nestjs/common").Type<any> | import("@nestjs/common").DynamicModule | Promise<import("@nestjs/common").DynamicModule> | import("@nestjs/common").ForwardReference<any> {
+  throw new Error('Function not implemented.');
+}
+

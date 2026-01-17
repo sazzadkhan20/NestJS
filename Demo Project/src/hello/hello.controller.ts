@@ -12,11 +12,18 @@ export class HelloController {
   }
 
   @Get('user/:name/:stack') // http://localhost:3000/hello/user/Sazzad/NestJs
-  getHelloWithParam(
+  getHelloWithParam1(
     @Param('name') n: string,
     @Param('stack') st: string,
   ): string {
-    return this.helloService.getHelloWithName(n, st);
+    return this.helloService.getHelloWithName2(n, st);
+  }
+
+  @Get('user/:name') // http://localhost:3000/hello/user/Sazzad
+  getHelloWithParam2(
+    @Param('name') n: string
+  ): string {
+    return this.helloService.getHelloWithName1(n);
   }
 
   @Get('user') // http://localhost:3000/hello/user?name=Sazzad Khan&stack=NestJS
@@ -24,6 +31,6 @@ export class HelloController {
     @Query('name') n: string,
     @Query('stack') st: string,
   ): string {
-    return this.helloService.getHelloWithName(n || 'xxx', st || 'PHP');
+    return this.helloService.getHelloWithName2(n || 'xxx', st || 'PHP');
   }
 }
